@@ -13,6 +13,8 @@
 
 #import "M13Checkbox.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 #define kBoxSize .875
 #define kCheckHorizontalExtention .125
 #define kCheckVerticalExtension .125
@@ -228,8 +230,8 @@
     //Set the basic properties
     CGFloat heightForCheckbox = [self heightForCheckbox];
     _flat = YES;
-    _strokeColor = [UIColor colorWithRed:0.02 green:0.47 blue:1 alpha:1];
-    _strokeWidth = kBoxStrokeWidth * heightForCheckbox;
+    _strokeColor = UIColorFromRGB(0xBBBBBB);
+    _strokeWidth = 1.0;
     _checkColor = [UIColor colorWithRed:0.02 green:0.47 blue:1 alpha:1];
     _tintColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     _uncheckedColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
